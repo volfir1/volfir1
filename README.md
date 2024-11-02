@@ -1,11 +1,10 @@
 
-![Uploading gogeta.gif…]()
+
+
+ ![gogeta](https://github.com/user-attachments/assets/bf575c05-afd8-4764-88df-54491e15b68a)
+
+
 # 💫 About Me:
-🔭 I’m currently working on<br>👯 I’m looking to collaborate on<br>🤝 I’m looking for help with<br>🌱 I’m currently learning<br>💬 Ask me about<br>⚡ Fun fact
-
-
-
-💫 About Me:
 🔭 I’m currently working on<br>👯 I’m looking to collaborate on<br>🤝 I’m looking for help with<br>🌱 I’m currently learning<br>💬 Ask me about<br>⚡ Fun fact
 
 
