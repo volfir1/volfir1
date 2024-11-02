@@ -3,11 +3,11 @@
 # 👋 Welcome to My GitHub Profile!
 
 ### 💫 About Me
- 🔭 I'm currently working on ...
- 🌱 I'm currently learning Python, React, and Laravel
- 👯 I'm looking to collaborate on web development projects
- 💬 Ask me about JavaScript, React, and Laravel
- ⚡ Fun fact: I'm an avid gamer across multiple platforms!
+ 🔭 I'm currently working on ...<br>
+ 🌱 I'm currently learning Python, React, and Laravel<br>
+ 👯 I'm looking to collaborate on web development projects<br>
+ 💬 Ask me about JavaScript, React, and Laravel<br>
+ ⚡ Fun fact: I'm an avid gamer across multiple platforms!<br>
 
 ### 🌐 Connect With Me
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/_eilst_)
