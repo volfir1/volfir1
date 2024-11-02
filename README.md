@@ -1,9 +1,8 @@
 
-https://github.com/user-attachments/assets/8ed8a17a-5003-43be-9294-1e80ea4058ae
+![Uploading gogeta.gif…]()
 # 💫 About Me:
 🔭 I’m currently working on<br>👯 I’m looking to collaborate on<br>🤝 I’m looking for help with<br>🌱 I’m currently learning<br>💬 Ask me about<br>⚡ Fun fact
 
-![Uploading gogeta.gif…]()
 
 https://github.com/user-attachments/assets/3f87e405-fabc-48a0-8bbb-b35f5a32ac5a
 
