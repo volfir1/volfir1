@@ -1,8 +1,7 @@
 
 
 
- ![gogeta](https://github.com/user-attachments/assets/bf575c05-afd8-4764-88df-54491e15b68a)
-
+https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg?cs=srgb&dl=dawn-landscape-nature-210186.jpg&fm=jpg
 
 # 💫 About Me:
 🔭 I’m currently working on<br>👯 I’m looking to collaborate on<br>🤝 I’m looking for help with<br>🌱 I’m currently learning<br>💬 Ask me about<br>⚡ Fun fact
