@@ -1,6 +1,77 @@
 <div align="center">
  
-![download](https://github.com/user-attachments/assets/2bd990aa-1b41-41a5-863d-939cf48d4272)
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
+    .pulsing {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .rotating {
+      animation: rotate 10s linear infinite;
+      transform-origin: center;
+    }
+    .text-gradient {
+      fill: url(#textGradient);
+    }
+  </style>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF2D20"/>
+      <stop offset="50%" style="stop-color:#38B2AC"/>
+      <stop offset="100%" style="stop-color:#646CFF"/>
+      <animate attributeName="x1" values="0%;100%;0%" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="x2" values="100%;200%;100%" dur="10s" repeatCount="indefinite" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="200" fill="#1a1b1e"/>
+  
+  <!-- Decorative circles -->
+  <g class="rotating">
+    <circle cx="700" cy="50" r="20" fill="#FF2D20" opacity="0.3"/>
+    <circle cx="660" cy="80" r="15" fill="#38B2AC" opacity="0.3"/>
+    <circle cx="730" cy="90" r="10" fill="#646CFF" opacity="0.3"/>
+  </g>
+
+  <!-- Main content -->
+  <g class="floating">
+    <!-- Code symbol -->
+    <path d="M100,100 L130,70 L160,100 L130,130 Z" fill="none" stroke="#38B2AC" stroke-width="2"/>
+    
+    <!-- Controller icon -->
+    <path d="M640,100 A30,30 0 1,1 700,100 A30,30 0 1,1 640,100" fill="none" stroke="#FF2D20" stroke-width="2"/>
+  </g>
+
+  <!-- Main text -->
+  <text x="400" y="100" text-anchor="middle" class="text-gradient" style="font-size: 48px; font-weight: bold;">
+    Welcome to My GitHub
+  </text>
+
+  <!-- Tech stack icons -->
+  <g class="pulsing">
+    <circle cx="200" cy="150" r="15" fill="#61DAFB"/> <!-- React -->
+    <circle cx="240" cy="150" r="15" fill="#FF2D20"/> <!-- Laravel -->
+    <circle cx="280" cy="150" r="15" fill="#38B2AC"/> <!-- Tailwind -->
+    <circle cx="320" cy="150" r="15" fill="#F7DF1E"/> <!-- JavaScript -->
+  </g>
+</svg>
 
 
 # 👋 Welcome to My GitHub Profile!
