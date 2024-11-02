@@ -2,7 +2,7 @@
 🔭 I’m currently working on<br>👯 I’m looking to collaborate on<br>🤝 I’m looking for help with<br>🌱 I’m currently learning<br>💬 Ask me about<br>⚡ Fun fact
 
 
-https://github.com/user-attachments/assets/9fc3c501-f756-4a2d-af20-9dc600e3d869
+                                                            https://github.com/user-attachments/assets/9fc3c501-f756-4a2d-af20-9dc600e3d869
 
 
 ## 🌐 Socials:
