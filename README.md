@@ -1,6 +1,6 @@
 <div align="center">
  
-<img src="header" width="800" alt="Welcome to My GitHub"/>
+<img src="header.svg" width="800" alt="Welcome to My GitHub"/>
 
 
 # 👋 Welcome to My GitHub Profile!
