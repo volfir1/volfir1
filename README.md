@@ -1,7 +1,5 @@
 <div align="center">
-
-
-https://github.com/user-attachments/assets/54e11994-8daa-4d5b-b598-25a153bedb8a
+![download](https://github.com/user-attachments/assets/4f7e292a-715d-46fc-a9ff-c6dfddf877c2)
 
 
 # 👋 Welcome to My GitHub Profile!
