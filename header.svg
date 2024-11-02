@@ -1,87 +1,139 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
   <defs>
     <!-- Gradients -->
-    <linearGradient id="redGlow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#ff0000;stop-opacity:0.3">
-        <animate attributeName="stop-opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" style="stop-color:#ff4444;stop-opacity:0.7">
-        <animate attributeName="stop-opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
-      </stop>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000"/>
+      <stop offset="100%" style="stop-color:#1a0000"/>
     </linearGradient>
     
+    <linearGradient id="neonRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff0000"/>
+      <stop offset="100%" style="stop-color:#ff4444">
+        <animate attributeName="stop-color" values="#ff4444;#ff0000;#ff4444" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
     <!-- Filters -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="
+        1 0 0 0 0
+        0 0.2 0 0 0
+        0 0 0.2 0 0
+        0 0 0 1 0" result="neon"/>
       <feMerge>
-        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="neon"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <!-- Patterns -->
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ff2222" stroke-width="0.5">
-        <animate attributeName="stroke-opacity" values="0.1;0.3;0.1" dur="4s" repeatCount="indefinite"/>
-      </path>
+    <!-- Building Pattern -->
+    <pattern id="windowGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="#ff0000" opacity="0.3">
+        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" begin="0s"/>
+      </rect>
     </pattern>
   </defs>
 
   <!-- Background -->
-  <rect width="100%" height="100%" fill="url(#grid)"/>
-  <rect width="100%" height="100%" fill="url(#redGlow)" opacity="0.3"/>
+  <rect width="100%" height="100%" fill="url(#skyGradient)"/>
 
-  <!-- Animated Shapes -->
-  <g filter="url(#glow)">
-    <!-- Pulsing Circle -->
-    <circle cx="150" cy="100" r="40" fill="none" stroke="#ff0000" stroke-width="2">
-      <animate attributeName="r" values="35;45;35" dur="3s" repeatCount="indefinite"/>
-      <animate attributeName="stroke-opacity" values="1;0.3;1" dur="3s" repeatCount="indefinite"/>
-    </circle>
-
-    <!-- Rotating Hexagon -->
-    <path d="M400,70 L430,85 L430,115 L400,130 L370,115 L370,85 Z" fill="none" stroke="#ff3333" stroke-width="2">
-      <animateTransform attributeName="transform" type="rotate" from="0 400 100" to="360 400 100" dur="10s" repeatCount="indefinite"/>
-      <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/>
+  <!-- Grid Lines -->
+  <g stroke="#ff0000" stroke-width="0.5" opacity="0.3">
+    <path d="M0,150 L800,150" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="10" dur="1s" repeatCount="indefinite"/>
     </path>
+    <path d="M0,200 L800,200" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="-10" dur="1s" repeatCount="indefinite"/>
+    </path>
+  </g>
 
-    <!-- Moving Line -->
-    <line x1="500" y1="50" x2="700" y2="150" stroke="#ff4444" stroke-width="2">
-      <animate attributeName="x1" values="500;550;500" dur="5s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="50;150;50" dur="5s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="700;650;700" dur="5s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="150;50;150" dur="5s" repeatCount="indefinite"/>
+  <!-- Far Buildings -->
+  <g transform="translate(0,50)">
+    <rect x="50" y="50" width="60" height="200" fill="url(#windowGrid)"/>
+    <rect x="150" y="20" width="40" height="230" fill="url(#windowGrid)"/>
+    <rect x="230" y="40" width="70" height="210" fill="url(#windowGrid)"/>
+    <rect x="340" y="30" width="50" height="220" fill="url(#windowGrid)"/>
+    <rect x="430" y="60" width="45" height="190" fill="url(#windowGrid)"/>
+    <rect x="510" y="25" width="65" height="225" fill="url(#windowGrid)"/>
+    <rect x="610" y="45" width="55" height="205" fill="url(#windowGrid)"/>
+    <rect x="700" y="35" width="70" height="215" fill="url(#windowGrid)"/>
+  </g>
+
+  <!-- Flying Vehicles -->
+  <g filter="url(#neonGlow)">
+    <!-- Vehicle 1 -->
+    <g>
+      <path d="M0,100 L15,95 L30,100 L15,105 Z" fill="#ff0000">
+        <animateMotion path="M0,0 L800,30" dur="7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <line x1="30" y1="100" x2="35" y2="100" stroke="#ff0000" stroke-width="2">
+        <animateMotion path="M0,0 L800,30" dur="7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="0.5s" repeatCount="indefinite"/>
+      </line>
+    </g>
+    
+    <!-- Vehicle 2 -->
+    <g>
+      <path d="M0,150 L20,143 L40,150 L20,157 Z" fill="#ff3333">
+        <animateMotion path="M800,0 L0,20" dur="10s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <line x1="40" y1="150" x2="48" y2="150" stroke="#ff3333" stroke-width="2">
+        <animateMotion path="M800,0 L0,20" dur="10s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="0.5s" repeatCount="indefinite"/>
+      </line>
+    </g>
+    
+    <!-- Vehicle 3 -->
+    <g>
+      <path d="M0,200 L25,192 L50,200 L25,208 Z" fill="#ff6666">
+        <animateMotion path="M0,0 L800,-40" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <line x1="50" y1="200" x2="60" y2="200" stroke="#ff6666" stroke-width="2">
+        <animateMotion path="M0,0 L800,-40" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="0.5s" repeatCount="indefinite"/>
+      </line>
+    </g>
+  </g>
+
+  <!-- Holographic Text -->
+  <g filter="url(#neonGlow)">
+    <text x="400" y="150" font-family="Arial, sans-serif" font-size="40" fill="#ff0000" text-anchor="middle">
+      CYBER DEV
+      <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/>
+    </text>
+    <text x="400" y="180" font-family="Arial, sans-serif" font-size="20" fill="#ff3333" text-anchor="middle">
+      FUTURE // CODE // INNOVATION
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- Data Streams -->
+  <g stroke="#ff0000" stroke-width="1" opacity="0.5">
+    <line x1="100" y1="0" x2="100" y2="300">
+      <animate attributeName="transform" attributeType="XML" type="translate" from="0 0" to="700 0" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="15s" repeatCount="indefinite"/>
+    </line>
+    <line x1="300" y1="0" x2="300" y2="300">
+      <animate attributeName="transform" attributeType="XML" type="translate" from="-200 0" to="500 0" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="12s" repeatCount="indefinite"/>
+    </line>
+    <line x1="500" y1="0" x2="500" y2="300">
+      <animate attributeName="transform" attributeType="XML" type="translate" from="-400 0" to="300 0" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="18s" repeatCount="indefinite"/>
     </line>
   </g>
 
-  <!-- Text Elements -->
-  <text x="400" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" fill="#ffffff" filter="url(#glow)">
-    <tspan>DEVELOPER</tspan>
-    <animate attributeName="fill-opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
-  </text>
-
-  <!-- Particle System -->
-  <g>
-    <circle cx="200" cy="50" r="2" fill="#ff6666">
-      <animate attributeName="cy" values="50;150;50" dur="4s" repeatCount="indefinite"/>
-      <animate attributeName="cx" values="200;250;200" dur="4s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="600" cy="150" r="2" fill="#ff6666">
-      <animate attributeName="cy" values="150;50;150" dur="3.5s" repeatCount="indefinite"/>
-      <animate attributeName="cx" values="600;550;600" dur="3.5s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="300" cy="100" r="2" fill="#ff6666">
-      <animate attributeName="cy" values="100;150;100" dur="3s" repeatCount="indefinite"/>
-      <animate attributeName="cx" values="300;350;300" dur="3s" repeatCount="indefinite"/>
-    </circle>
-  </g>
-
-  <!-- Energy Wave -->
-  <path d="M0,100 Q200,50 400,100 T800,100" fill="none" stroke="#ff0000" stroke-width="2">
-    <animate attributeName="d" 
-             values="M0,100 Q200,50 400,100 T800,100;
-                     M0,100 Q200,150 400,100 T800,100;
-                     M0,100 Q200,50 400,100 T800,100"
-             dur="5s" repeatCount="indefinite"/>
-  </path>
+  <!-- Energy Pulses -->
+  <circle cx="400" cy="150" r="100" fill="none" stroke="#ff0000" stroke-width="2" opacity="0">
+    <animate attributeName="r" from="0" to="400" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" from="0.5" to="0" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="400" cy="150" r="100" fill="none" stroke="#ff0000" stroke-width="2" opacity="0">
+    <animate attributeName="r" from="0" to="400" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" from="0.5" to="0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+  </circle>
 </svg>
