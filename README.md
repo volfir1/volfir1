@@ -167,6 +167,6 @@ const currentStack = {
 ![image](https://github.com/user-attachments/assets/7781647f-6bb1-41c7-8fac-63c2f3d695b3)
 
 <!-- Snake animation -->
-
+![Snake animation](https://github.com/volfir1/volfir1/blob/output/github-snake-dark.svg)
 
 </div>
