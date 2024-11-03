@@ -4,7 +4,7 @@
 <img src="header.svg" width="800" alt="Welcome to My GitHub"/>
 
 <!-- Typing SVG for dynamic welcome message -->
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=FF0000&center=true&vCenter=true&width=435&lines=Full+Stack+Developer;Open+Source+Enthusiast;Continuous+Learner;Gaming+Aficionado)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=FF0000&center=true&vCenter=true&width=435&lines=Front+End+Developer;Open+Source+Enthusiast;Continuous+Learner;Gaming+Aficionado)](https://git.io/typing-svg)
 
 # 🚀 Welcome to My Digital Universe! 
 
