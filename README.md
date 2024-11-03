@@ -167,6 +167,33 @@ const currentStack = {
 ![image](https://github.com/user-attachments/assets/7781647f-6bb1-41c7-8fac-63c2f3d695b3)
 
 <!-- Snake animation -->
-![Snake animation](https://github.com/{username}/raw/output/github-contribution-grid-snake.svg)
+name: Generate Snake Animation
+
+on:
+  schedule:
+    - cron: "0 */24 * * *" # runs every 24 hours
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ volfir1 }}
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+
+      - uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 </div>
