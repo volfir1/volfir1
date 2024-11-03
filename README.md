@@ -164,6 +164,8 @@ const currentStack = {
 <img src="https://komarev.com/ghpvc/?username=volfir1&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile Views"/>
 </p>
 
+![image](https://github.com/user-attachments/assets/7781647f-6bb1-41c7-8fac-63c2f3d695b3)
+
 <!-- Snake animation -->
 ![Snake animation](https://github.com/{username}/raw/output/github-contribution-grid-snake.svg)
 
