@@ -2,13 +2,14 @@ name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: "0 */24 * * *" # runs every 24 hours
+    - cron: "0 */24 * * *"
   workflow_dispatch:
 
 jobs:
-  generate:
+  build:
     runs-on: ubuntu-latest
-
+    permissions: 
+      contents: write
     steps:
       - uses: actions/checkout@v3
 
@@ -16,9 +17,7 @@ jobs:
         with:
           github_user_name: volfir1
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+            dist/github-snake.svg?color_snake=orange&color_dots=#89E1FF,#4FC1FF,#1C9EFF,#0178FF,#0063D1
 
       - uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
